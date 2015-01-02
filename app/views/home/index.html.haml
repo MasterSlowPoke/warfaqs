@@ -1,2 +1,7 @@
-%h1 Home
-%p Find me in app/views/home/index.html.erb
+%h1 Sources
+%nav
+  %ul
+    - @sources.each do |source|
+      %li[source]= source.title
+%h2 Dataslates
+#dataslates
