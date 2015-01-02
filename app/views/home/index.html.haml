@@ -2,6 +2,7 @@
 %nav
   %ul
     - @sources.each do |source|
-      %li[source]= source.title
+      %li
+        %a.source{href: '#', data: {source_id: source.id}}= source.title
 %h2 Dataslates
 #dataslates
