@@ -1,0 +1,10 @@
+= form_for @dataslate do |f|
+  - if @dataslate.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dataslate.errors.count, "error")} prohibited this dataslate from being saved:"
+      %ul
+        - @dataslate.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

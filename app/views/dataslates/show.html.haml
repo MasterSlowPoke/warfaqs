@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%h1= @dataslate.title
+%p= @dataslate.role
+%h2 Sources
+%ul
+  - @dataslate.sources.each do |source|
+    %li= source.title
+
+= link_to 'Edit', edit_dataslate_path(@dataslate)
+\|
+= link_to 'Back', dataslates_path

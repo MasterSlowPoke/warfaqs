@@ -1,0 +1,21 @@
+%h1 Listing dataslates
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Role
+      %th
+      %th
+      
+  %tbody
+    - @dataslates.each do |dataslate|
+      %tr
+        %td= link_to dataslate.title, dataslate
+        %td= dataslate.role
+        %td= link_to 'Edit', edit_dataslate_path(dataslate)
+        %td= link_to 'Destroy', dataslate, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dataslate', new_dataslate_path
