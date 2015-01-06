@@ -4,7 +4,14 @@ class DataslatesController < ApplicationController
   # GET /dataslates
   # GET /dataslates.json
   def index
-    @dataslates = Dataslate.all
+    if params[:source_id]
+      puts "source id found"
+      source = Source.find_by_id(params[:source_id])
+      @dataslates = source.dataslates
+    else
+      puts "all"
+      @dataslates = Dataslate.all
+    end
   end
 
   # GET /dataslates/1

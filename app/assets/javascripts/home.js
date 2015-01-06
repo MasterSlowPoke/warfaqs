@@ -4,14 +4,12 @@ $(function() {
     $.ajax({
       url: "/dataslates.json",
       data: {
-        source_id: 1
+        source_id: $(this).data('source-id'),
       },
       type: "GET",
       dataType : "json",
  
       success: function( json ) {
-        console.log(json);
-        console.log("fads");
         $(json).each(function(i, dataslate) {
           console.log(dataslate['title']);
         });
