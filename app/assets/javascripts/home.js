@@ -30,6 +30,20 @@ $(function() {
     });
   });
 
+  $(document).on('click', '.dataslate', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: "/dataslates/" + $(this).data('dataslate-id') + ".json",
+      type: "GET",
+      dataType : "json",
+ 
+      success: function( json ) {
+        container = $('#dataslate');
+        container.children('h3').html(json['title']);
+        list = container.children('ul');
+        list.html('');
+        list.append('<li><b>Role</b>: ' + json['role'] + '</li>');
+        list.append('<li><b>Picture</b>: ' + json['picture_url'] + '</li>')
       },
  
       error: function( xhr, status, errorThrown ) {
