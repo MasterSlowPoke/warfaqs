@@ -46,11 +46,6 @@ GEM
       haml (>= 3.1, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    hamlbars (2.1.1)
-      execjs (>= 1.2)
-      haml
-      sprockets (>= 2.0)
-      tilt
     handlebars_assets (0.18)
       execjs (>= 1.2.9)
       multi_json
@@ -137,7 +132,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   haml-rails
-  hamlbars
   handlebars_assets
   jbuilder (~> 2.0)
   jquery-rails
