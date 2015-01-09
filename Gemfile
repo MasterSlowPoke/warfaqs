@@ -12,3 +12,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'handlebars_assets'
 gem 'haml-rails'
+gem "paperclip"
