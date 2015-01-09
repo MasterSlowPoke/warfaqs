@@ -1,4 +1,8 @@
 $(function() {
+  Handlebars.registerHelper('idHelper', function() {
+    return 'data-dataslate-id="fart"';
+  });
+
   $(document).on('click', '.source', function(e) {
     e.preventDefault();
     $.ajax({
@@ -10,12 +14,8 @@ $(function() {
       dataType : "json",
  
       success: function( json ) {
-        list = $('#dataslates ul');
-        list.html('');
-        $(json).each(function(i, dataslate) {
-          list.append("<li><a href='#' class='dataslate' data-dataslate-id='" + dataslate['id'] + "'>" + dataslate['title'] + '</a></li>');
-        });
-        $('#dataslates').removeClass('hidden');  
+        list = $('#dataslates');
+        list.html(HandlebarsTemplates['dataslates'](json));
       },
  
       error: function( xhr, status, errorThrown ) {
@@ -38,12 +38,7 @@ $(function() {
       dataType : "json",
  
       success: function( json ) {
-        container = $('#dataslate');
-        container.children('h3').html(json['title']);
-        list = container.children('ul');
-        list.html('');
-        list.append('<li><b>Role</b>: ' + json['role'] + '</li>');
-        list.append('<li><b>Picture</b>: ' + json['picture_url'] + '</li>')
+        $('#dataslate').html(HandlebarsTemplates['dataslate'](json));
       },
  
       error: function( xhr, status, errorThrown ) {
