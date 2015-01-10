@@ -1,6 +1,8 @@
 class Dataslate < ActiveRecord::Base
   has_many :dataslate_sources
+  has_many :dataslate_factions
   has_many :sources, through: :dataslate_sources
+  has_many :factions, through: :dataslate_factions
 
   scope :role, ->(role_name) { where(role: role_name) }
 

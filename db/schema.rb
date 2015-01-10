@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109032821) do
+ActiveRecord::Schema.define(version: 20150110204205) do
+
+  create_table "dataslate_factions", force: true do |t|
+    t.integer  "dataslate_id", null: false
+    t.integer  "faction_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dataslate_factions", ["dataslate_id"], name: "index_dataslate_factions_on_dataslate_id"
+  add_index "dataslate_factions", ["faction_id"], name: "index_dataslate_factions_on_faction_id"
 
   create_table "dataslate_sources", force: true do |t|
     t.integer  "dataslate_id", null: false
