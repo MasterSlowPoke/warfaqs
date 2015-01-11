@@ -8,14 +8,17 @@ $(function() {
     $.ajax({
       url: "/dataslates.json",
       data: {
-        faction_id: $(this).data('faction-id'),
+        faction_id: 33, //$(this).data('faction-id'),
       },
       type: "GET",
       dataType : "json",
  
       success: function( json ) {
         list = $('#dataslates');
-        list.html(HandlebarsTemplates['dataslates'](json));
+        if (json['dataslates'].length > 0)
+          list.html(HandlebarsTemplates['dataslates'](json));
+        else
+          list.html(HandlebarsTemplates['error'](error = { message: 'Error finding Dataslates.' }));
       },
  
       error: function( xhr, status, errorThrown ) {
