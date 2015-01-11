@@ -8,7 +8,7 @@ $(function() {
     $.ajax({
       url: "/dataslates.json",
       data: {
-        faction_id: 33, //$(this).data('faction-id'),
+        faction_id: $(this).data('faction-id'),
       },
       type: "GET",
       dataType : "json",
