@@ -1,7 +1,7 @@
 <h3>{{ title }}</h3>
 <ul>
   <li><b>Role</b>: {{ role }}</li>
-  <li><b>Picture</b>: {{ picture_url }}</li>
+  <li><b>Picture</b>: <img src='{{ picture }}'></li>
   <li><b>Most Recent Source:</b> {{ most_recent_source }}
     {{#if previous_sources}}
       <li>
