@@ -1,14 +1,13 @@
 %h1 Sources
 %nav
   %ul
-    - @sources.each do |source|
+    - @factions.each do |faction|
       %li
-        %a.source{href: '#', data: {source_id: source.id}}= source.title
+        %a.faction{href: '#', data: {faction_id: faction.id}}= faction.name
+        = image_tag faction.picture.url(:thumb)
 
 %h2 Dataslates
 %nav#dataslates
 
 %h2 Dataslate Info
 #dataslate
-  %h3
-  %ul

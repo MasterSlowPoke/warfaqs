@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @sources = Source.all
+    @factions = Faction.all
   end
 end

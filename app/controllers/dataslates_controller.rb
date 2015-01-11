@@ -4,13 +4,9 @@ class DataslatesController < ApplicationController
   # GET /dataslates
   # GET /dataslates.json
   def index
-    if params[:source_id]
-      puts "source id found"
-      source = Source.find_by_id(params[:source_id])
-      @dataslates = source.dataslates
-    else
-      puts "all"
-      @dataslates = Dataslate.all
+    if params[:faction_id]
+      faction = Faction.find_by_id(params[:faction_id])
+      @dataslates = faction.dataslates if faction 
     end
   end
 

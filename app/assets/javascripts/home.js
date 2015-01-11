@@ -3,12 +3,12 @@ $(function() {
     return 'data-dataslate-id="fart"';
   });
 
-  $(document).on('click', '.source', function(e) {
+  $(document).on('click', '.faction', function(e) {
     e.preventDefault();
     $.ajax({
       url: "/dataslates.json",
       data: {
-        source_id: $(this).data('source-id'),
+        faction_id: $(this).data('faction-id'),
       },
       type: "GET",
       dataType : "json",
