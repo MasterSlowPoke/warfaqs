@@ -2,4 +2,14 @@
 <ul>
   <li><b>Role</b>: {{ role }}</li>
   <li><b>Picture</b>: {{ picture_url }}</li>
+  <li><b>Most Recent Source:</b> {{ most_recent_source }}
+    {{#if previous_sources}}
+      <li>
+        Previous Sources: <ul>
+        {{#each previous_sources}}
+          <li>{{title}}
+        {{/each}}
+        </ul>
+      </li>
+    {{/if}}
 </ul>

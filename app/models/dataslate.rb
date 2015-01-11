@@ -11,4 +11,8 @@ class Dataslate < ActiveRecord::Base
   def most_recent_source
     sources.order(published: :desc).first
   end
+
+  def previous_sources
+    sources.order(published: :desc).offset(1)
+  end
 end
