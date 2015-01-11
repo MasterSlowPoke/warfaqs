@@ -9,6 +9,6 @@ class Dataslate < ActiveRecord::Base
   scope :role, ->(role_name) { where(role: role_name) }
 
   def most_recent_source
-    sources.order(published: :desc).limit(1)
+    sources.order(published: :desc).first
   end
 end
