@@ -1,1 +1,2 @@
-json.extract! @dataslate, :id, :title, :role, :picture_url
+json.(@dataslate, :id, :title, :role)
+json.picture @dataslate.picture.url(:thumb)

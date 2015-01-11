@@ -1,4 +1,6 @@
 class Dataslate < ActiveRecord::Base
+  include Picturable
+
   has_many :dataslate_sources
   has_many :dataslate_factions
   has_many :sources, through: :dataslate_sources
